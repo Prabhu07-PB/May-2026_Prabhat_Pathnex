@@ -1,0 +1,100 @@
+Basic CI/CD Concepts with Jenkins & GitLab
+
+Jenkinsfile — Basic CI Pipeline
+
+pipeline{
+	agent any stages {
+		stage('Build') {
+			steps{eco 'Building project'}
+		}
+		
+		stage('Test') {
+	steps{eco 'Running Test'}
+}
+
+tage('Deploy'){
+	steps{
+		eco 'Deploying Application'
+	}
+}
+
+
+
+stage('Deploy'){
+	steps{
+		eco 'Deploying Application'}
+}
+
+}
+}
+
+GitLab CI/CD — Basic Pipeline
+
+stages :
+-Build
+-Test
+-Deploy
+
+build : 
+stage:build
+Script: -echo "Building Project"
+
+
+test:
+
+stage: test
+Script: -echo "Running test"
+
+Deploy:
+
+stage: Deploy
+Script: -echo "Deploying Application"
+
+Ansible — Install and Configure Nginx
+
+-name Install and Configure Nginx
+
+hosts: all
+become: yes
+tasks:
+   
+   -name: Install Nginx
+   yum:
+   name: Nginx
+   state: present
+
+   -name: Configure Nginx
+   template:
+   src: nginx.conf.j2
+   dest: /etc/nginx/nginx.conf
+
+
+   -name: Start nginx service
+   service: 
+
+   name:nginx
+   state: started
+   enabled: yes
+
+Terraform — EC2 with Security Group
+
+resource "aws_security_group" "example"{
+	name = "example_security_group"
+	description = "Allow SSH and HTTP"
+	ingress{
+		from_port = 22
+		to_port = 22
+		protocol = "tcp"
+		cidr_blocks = ["0.0.0.0/0"]
+
+	}
+
+	ingress {
+		from_port =0
+		to_port = 0
+		protocol = "-1"
+		cidr_blocks = ["0.0.0.0.0/0"]
+	}
+}
+
+
