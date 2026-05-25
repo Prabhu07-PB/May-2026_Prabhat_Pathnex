@@ -1,0 +1,9 @@
+Today i attended 2.5 hours of morning teams class
+
+Watched 1 hour you tube video
+
+
+Attended evening session for 40 mins
+
+
+Tomorrow will practice creating ec2 instance and also kubernetes cluster from ec2 server

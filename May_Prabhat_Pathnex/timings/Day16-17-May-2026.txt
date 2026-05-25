@@ -1,0 +1,10 @@
+Today attended morning session for 2.5 hours
+
+Also watched you tube for 2 hours
+
+Practiced basic Linux and created EC2 instance from terraform(It took 3 hours)
+
+
+Attended evening session for 1 hours
+
+

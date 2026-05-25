@@ -60,7 +60,7 @@ pipeline {
                 echo 'Running tests...'}
         }
         
-        stage('Deploy to Kubernetes') {
+  stage('Deploy to Kubernetes') {
             steps {
                 script {
                     if (env.DEPLOY_ENV == 'production') {

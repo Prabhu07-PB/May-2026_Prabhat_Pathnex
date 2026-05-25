@@ -1,0 +1,11 @@
+Today i watched previous you tube video on kubernetes for 2 hours
+
+Did hands on the same for 3 hours
+
+Did some troubleshooting on K8 clusters for 1 hours
+
+Learned some interview question on scenario basis for 2 hours
+
+Stuied more about docker and did hands on for 2 hours.
+
+
