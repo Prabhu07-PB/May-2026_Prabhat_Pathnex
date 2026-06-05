@@ -1,0 +1,122 @@
+##Complete Deplyoment Setup
+
+---
+
+-name: Complete Deployment Setup    
+hosts: all
+become: yes
+tasks: 
+  -name: Deploy Ngnix, MySQL and Redis with Docker 
+  Command: docker-compose -f /path/to/docker-compose.yml up -d
+
+  ##Terraform — Provisioning Multi-Tier Application with VPC and Security
+
+  resource "aws_vpc" "Prabhat_vpc"{
+
+    cidr_block = "10.0.0.0/16"
+  }
+
+resource "aws_instance" "Prabhat_prabhat"{
+  
+  ami = "ami-0abcd1234abcd1234"
+  subnet_id = "t2.medium"
+  instance_type = aws_subnet.pathnex_subnet.id
+  security_groups = [aws_security_group.pathnex_sg.name]
+
+}
+
+## Kubernetes — Deploy Full Application Stack
+
+apiVersion = app/v1
+kind- Deployment
+metadata = 
+  name: Prabhat-app
+
+  spec:
+     replicas = 2       ##tells Deployment how to manage pods
+     selector:
+       matchLabels:
+        app : Prabhat_app
+     
+     template:       ##how the pods template will look like
+       metadata:
+         labels:
+          app : Prabhat_app
+
+     Spec:
+     Containers:            ##tells pods what should be run
+        -name : Ngnix
+        image : Ngnix
+        ports :
+          -ContainerPort = 80     
+
+
+ apiVersion = app/v1
+
+ metadata :
+     kind - Deployment
+        name : Prabhat-app
+
+  spec:
+    replicas = 2
+    selector:
+    matchLabels: 
+     app : Prabhat_app
+
+     template:
+       metadata :
+         labels :
+          app : Prabhat_app
+
+     spec:
+       Containers :
+         -name : Ngnix
+         image : Ngnix
+         ports : 
+           -ContainerPort = 80
+          
+---
+
+kind : Service
+metadata : 
+   name : pathnex-Service
+
+   Spec: 
+     selector: 
+     app : Prabhat-app
+   
+   ports: 
+    -port : 80
+    targetPort : 80
+
+##Docker
+
+# Docker Security & Cleanup
+
+FROM Ngnix
+RUN useradd prabhatuser
+USER pathnexuser
+
+# Final Docker Project
+
+Version : '3'
+service : 
+  frontend:
+    image : Ngnix
+    container_name: prabhat-frontend
+    ports : 
+      - "80:80"
+
+      backend:
+        build : ./backend
+        container_name : prabhat-backend
+        ports:
+          - "5000:5000"
+        
+            database:
+              image : mysql:8
+              container_name: prabhat-mysql
+              environment: 
+                MySQL_ROOT_PASSWORD : root
+
+

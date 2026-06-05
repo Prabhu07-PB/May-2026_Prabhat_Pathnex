@@ -1,0 +1,7 @@
+Attended 2.5 hours of teams morning session
+
+Practiced creating eks cluster and ec2 instance using terraform and entered into ec2 server through ssh for 3 hours
+
+Watched 2 hours of youtube video
+
+Attended eveving session for 35 mins.
